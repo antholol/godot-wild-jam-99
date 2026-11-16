@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://d1rs1mqorbwxc"]
 
-[sub_resource type="Theme" id="Theme_pt0c6"]
+[sub_resource type="Theme" id="Theme_e1x85"]
 
-[node name="Control" type="Control" unique_id=1932850276]
+[sub_resource type="LabelSettings" id="LabelSettings_wvktn"]
+
+[node name="mainMenu" type="Control" unique_id=1932850276]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,5 +35,8 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=245791606]
 layout_mode = 2
-theme = SubResource("Theme_pt0c6")
-text = "ggggg"
+theme = SubResource("Theme_e1x85")
+text = "placeholder"
+label_settings = SubResource("LabelSettings_wvktn")
+horizontal_alignment = 1
+vertical_alignment = 1
