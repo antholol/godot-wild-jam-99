@@ -3,14 +3,23 @@
 [ext_resource type="Script" uid="uid://xmi3lov54tgj" path="res://scenes/main_game.gd" id="1_mw4qg"]
 [ext_resource type="Theme" uid="uid://ci8pynjmmu7yd" path="res://assets/theme.tres" id="2_mmojm"]
 
+[sub_resource type="Gradient" id="Gradient_iuu36"]
+offsets = PackedFloat32Array(0.2, 0.5, 0.8)
+colors = PackedColorArray(0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1)
+metadata/_snap_enabled = true
+
 [sub_resource type="LabelSettings" id="LabelSettings_mw4qg"]
 font_size = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aurs4"]
-bg_color = Color(0.32999998, 0.32999998, 1, 1)
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmojm"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="mainGame" type="Node2D" unique_id=1014184779]
 script = ExtResource("1_mw4qg")
+myGradient = SubResource("Gradient_iuu36")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=946632643]
 
@@ -35,7 +44,7 @@ grow_horizontal = 0
 
 [node name="daysPassedLabel" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer" unique_id=1157089242]
 layout_mode = 2
-text = "Day 0"
+text = "dingles"
 label_settings = SubResource("LabelSettings_mw4qg")
 
 [node name="Heat Bar" type="ProgressBar" parent="CanvasLayer" unique_id=1892487981]
@@ -44,13 +53,39 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
-offset_top = -43.0
+offset_top = -80.0
 offset_right = -24.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_mmojm")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/background = SubResource("StyleBoxFlat_aurs4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mmojm")
 step = 0.1
 value = 50.9
+show_percentage = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Heat Bar" unique_id=2103799886]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.67, 0.67, 0.67, 0.3764706)
+
+[node name="heatValLabel" type="Label" parent="CanvasLayer/Heat Bar" unique_id=579369759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.78431374)
+theme_override_font_sizes/font_size = 47
+text = "dingle dop"
+horizontal_alignment = 1
+vertical_alignment = 1
