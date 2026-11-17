@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://yswpmh811npw"]
 
 [ext_resource type="Script" uid="uid://xmi3lov54tgj" path="res://scenes/main_game.gd" id="1_mw4qg"]
+[ext_resource type="Theme" uid="uid://ci8pynjmmu7yd" path="res://assets/theme.tres" id="2_mmojm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mw4qg"]
+font_size = 50
 
 [node name="mainGame" type="Node2D" unique_id=1014184779]
 script = ExtResource("1_mw4qg")
@@ -14,3 +18,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.011764706, 0.011764706, 0.09019608, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect" unique_id=665476093]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -158.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 93.0
+grow_horizontal = 0
+
+[node name="daysPassedLabel" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer" unique_id=1157089242]
+layout_mode = 2
+text = "Day 0"
+label_settings = SubResource("LabelSettings_mw4qg")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1892487981]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -43.0
+offset_right = -24.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_mmojm")
+value = 50.0
