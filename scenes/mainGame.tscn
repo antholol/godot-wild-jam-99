@@ -6,6 +6,9 @@
 [sub_resource type="LabelSettings" id="LabelSettings_mw4qg"]
 font_size = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aurs4"]
+bg_color = Color(0.32999998, 0.32999998, 1, 1)
+
 [node name="mainGame" type="Node2D" unique_id=1014184779]
 script = ExtResource("1_mw4qg")
 
@@ -35,7 +38,7 @@ layout_mode = 2
 text = "Day 0"
 label_settings = SubResource("LabelSettings_mw4qg")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1892487981]
+[node name="Heat Bar" type="ProgressBar" parent="CanvasLayer" unique_id=1892487981]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -47,4 +50,7 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_mmojm")
-value = 50.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_aurs4")
+step = 0.1
+value = 50.9
