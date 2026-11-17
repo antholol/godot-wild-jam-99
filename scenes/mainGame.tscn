@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://yswpmh811npw"]
 
+[ext_resource type="Script" uid="uid://xmi3lov54tgj" path="res://scenes/main_game.gd" id="1_mw4qg"]
+
 [node name="mainGame" type="Node2D" unique_id=1014184779]
+script = ExtResource("1_mw4qg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=946632643]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=810984406]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.011764706, 0.011764706, 0.09019608, 1)
