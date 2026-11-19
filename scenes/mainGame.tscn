@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://xmi3lov54tgj" path="res://scenes/main_game.gd" id="1_mw4qg"]
 [ext_resource type="Theme" uid="uid://ci8pynjmmu7yd" path="res://assets/theme.tres" id="2_mmojm"]
-[ext_resource type="Texture2D" uid="uid://demwju3dpxjdw" path="res://icon.svg" id="3_iuu36"]
 
 [sub_resource type="Gradient" id="Gradient_iuu36"]
 offsets = PackedFloat32Array(0.2, 0.5, 0.8)
@@ -17,6 +16,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmojm"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mmojm"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [node name="mainGame" type="Node2D" unique_id=1014184779]
 script = ExtResource("1_mw4qg")
@@ -100,7 +102,7 @@ size_flags_vertical = 4
 
 [node name="cat" type="Sprite2D" parent="CanvasLayer/BoxContainer" unique_id=359311703]
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_iuu36")
+texture = SubResource("CompressedTexture2D_mmojm")
 
 [node name="Timer" type="Timer" parent="." unique_id=256781494]
 

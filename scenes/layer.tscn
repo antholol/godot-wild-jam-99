@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dmf7bhvrnkin"]
+
+[ext_resource type="Texture2D" path="res://assets/redCircle.png" id="1_oobeh"]
+
+[node name="layer" type="Sprite2D" unique_id=2091338383]
+texture = ExtResource("1_oobeh")
