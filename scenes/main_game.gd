@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	gameTimeInSeconds = timePassed(Global.startTime,Global.currentTime)
 	
 func _process(delta: float) -> void:
-	Global.daysPassed = gameTimeInSeconds / (30)
+	Global.daysPassed = gameTimeInSeconds / (5 * 60)
 	dayCounter(Global.daysPassed)
 	changeHeat(Global.heat)
 	print(gameTimeInSeconds)
