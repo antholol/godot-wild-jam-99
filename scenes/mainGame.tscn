@@ -59,7 +59,7 @@ theme = ExtResource("2_mmojm")
 theme_override_styles/background = SubResource("StyleBoxFlat_aurs4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mmojm")
 step = 0.1
-value = 50.9
+value = 10.0
 show_percentage = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Heat Bar" unique_id=2103799886]
@@ -101,3 +101,12 @@ size_flags_vertical = 4
 [node name="cat" type="Sprite2D" parent="CanvasLayer/BoxContainer" unique_id=359311703]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_iuu36")
+
+[node name="update_heat" type="Timer" parent="." unique_id=1687165125]
+wait_time = 2.0
+autostart = true
+
+[node name="timer" type="Timer" parent="." unique_id=1839583235]
+
+[connection signal="timeout" from="update_heat" to="." method="_on_update_heat_timeout"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
