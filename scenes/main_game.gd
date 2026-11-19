@@ -2,6 +2,8 @@ extends Node2D
 @onready var daysPassedLabel: Label = $CanvasLayer/ColorRect/VBoxContainer/daysPassedLabel
 @onready var heat_bar: ProgressBar = $"CanvasLayer/Heat Bar"
 @onready var heat_val_label: Label = $"CanvasLayer/Heat Bar/heatValLabel"
+@onready var cat: Sprite2D = $CanvasLayer/BoxContainer/cat
+
 @export var myGradient: Gradient
 
 var gameTimeInSeconds: int = 0
@@ -11,25 +13,32 @@ func _ready() -> void:
 	Global.heat = 50.00
 	Global.daysPassed = 0
 	Global.startTime = Time.get_ticks_msec()
+	Global.aggregateHeatLoss = -0.25
 	 
 func _physics_process(delta: float) -> void:
 	Global.currentTime = Time.get_ticks_msec()
 	gameTimeInSeconds = timePassed(Global.startTime,Global.currentTime)
 	
+	if ((gameTimeInSeconds % 10) == 0) == true:
+		updateHeat()
+	#end if
+	
+	
 func _process(delta: float) -> void:
-	Global.daysPassed = gameTimeInSeconds / (5 * 60)
+	Global.daysPassed = gameTimeInSeconds / (320) #therefore each day lasts 16/3 minutes
 	dayCounter(Global.daysPassed)
-	changeHeat(Global.heat)
-	print(gameTimeInSeconds)
+	changeHeatBarVal(Global.heat)
+	print(Global.aggregateHeatLoss)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"):
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 		
-func changeHeat(heat: float) -> void:
+func changeHeatBarVal(heat: float) -> void:
 	heat_val_label.text = str(int(heat))
 	heat_bar.value = heat
 	heat_bar.modulate = myGradient.sample(1 * 0.01 * heat)
+	
 	#heat_bar.modulate = Color((1 * 0.01 * heat),0,(1 * 0.01 * (100 - heat)),1)
 
 func timePassed(startTime: int, currentTime: int) -> int:
@@ -37,3 +46,9 @@ func timePassed(startTime: int, currentTime: int) -> int:
 	
 func dayCounter(daysPassed: int) -> void:
 	daysPassedLabel.text = "Day " + str(daysPassed)
+	
+func heatCalc(addToHeat: float) -> void: # addToHeat means how much to add i mean ig
+	Global.aggregateHeatLoss += addToHeat
+
+func updateHeat() -> void:
+	Global.heat = Global.heat + Global.aggregateHeatLoss
