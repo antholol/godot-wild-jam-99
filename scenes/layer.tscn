@@ -1,6 +1,80 @@
 [gd_scene format=3 uid="uid://dmf7bhvrnkin"]
 
-[ext_resource type="Texture2D" path="res://assets/redCircle.png" id="1_oobeh"]
+[ext_resource type="Texture2D" uid="uid://dlm8yotsbtem3" path="res://assets/redCircle3.png" id="1_oobeh"]
+[ext_resource type="Script" uid="uid://drkpgbuqoqgs1" path="res://scenes/layer.gd" id="2_ls3km"]
+
+[sub_resource type="Animation" id="Animation_oobeh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ls3km"]
+resource_name = "spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(-0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6uvp"]
+_data = {
+&"RESET": SubResource("Animation_oobeh"),
+&"spawn": SubResource("Animation_ls3km")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pt0c6"]
+radius = 318.0566
 
 [node name="layer" type="Sprite2D" unique_id=2091338383]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(3, 3)
 texture = ExtResource("1_oobeh")
+script = ExtResource("2_ls3km")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=755470642]
+libraries/ = SubResource("AnimationLibrary_n6uvp")
+autoplay = &"spawn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350269141]
+shape = SubResource("CircleShape2D_pt0c6")
