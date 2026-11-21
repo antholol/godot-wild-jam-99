@@ -77,9 +77,10 @@ libraries/ = SubResource("AnimationLibrary_n6uvp")
 autoplay = &"spawn"
 
 [node name="hoverDetection" type="Area2D" parent="." unique_id=437527726]
+collision_layer = 98
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hoverDetection" unique_id=2013483958]
 shape = SubResource("CircleShape2D_pt0c6")
 
-[connection signal="mouse_entered" from="hoverDetection" to="." method="_on_hover_detection_mouse_entered"]
-[connection signal="mouse_exited" from="hoverDetection" to="." method="_on_hover_detection_mouse_exited"]
+[connection signal="area_entered" from="hoverDetection" to="." method="_on_hover_detection_area_entered"]
+[connection signal="area_exited" from="hoverDetection" to="." method="_on_hover_detection_area_exited"]

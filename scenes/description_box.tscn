@@ -16,6 +16,9 @@ stacked_shadow_0/color = Color(0.6117647, 0.078431375, 0.6117647, 0.78431374)
 stacked_shadow_1/offset = Vector2(-1, -1)
 stacked_shadow_1/color = Color(0.039215688, 0.050980393, 0.63529414, 0.78431374)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pt0c6"]
+radius = 1.0
+
 [node name="descriptionBox" type="Node2D" unique_id=203678416]
 script = ExtResource("1_gbv8h")
 
@@ -30,3 +33,9 @@ grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_8m412")
 text = "null"
 label_settings = SubResource("LabelSettings_5pyrs")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=656441115]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2074078428]
+shape = SubResource("CircleShape2D_pt0c6")

@@ -90,6 +90,11 @@ ESC={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="mouseArea"
+2d_physics/layer_2="hoverDetectionArea"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
