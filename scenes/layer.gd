@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 func _on_hover_detection_mouse_entered() -> void:
 	Global.layerBeingHoveredOn = self # sets to this (root) node
+	print("hello!")
 
 func _on_hover_detection_mouse_exited() -> void:
 	Global.layerBeingHoveredOn = null
