@@ -9,6 +9,7 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5pyrs"]
 line_spacing = -6.715
+font_size = 25
 font_color = Color(1, 0, 0, 1)
 stacked_shadow_count = 2
 stacked_shadow_0/color = Color(0.6117647, 0.078431375, 0.6117647, 0.78431374)
