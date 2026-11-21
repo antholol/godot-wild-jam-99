@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bepjoxxfwig58"]
+
+[ext_resource type="Script" uid="uid://ud2f8vsm1e82" path="res://scenes/description_box.gd" id="1_gbv8h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m412"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5pyrs"]
+line_spacing = -6.715
+font_color = Color(1, 0, 0, 1)
+stacked_shadow_count = 2
+stacked_shadow_0/color = Color(0.6117647, 0.078431375, 0.6117647, 0.78431374)
+stacked_shadow_1/offset = Vector2(-1, -1)
+stacked_shadow_1/color = Color(0.039215688, 0.050980393, 0.63529414, 0.78431374)
+
+[node name="descriptionBox" type="Node2D" unique_id=203678416]
+script = ExtResource("1_gbv8h")
+
+[node name="effectDesc" type="Label" parent="." unique_id=1222445352]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_right = -2.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8m412")
+text = "buff text"
+label_settings = SubResource("LabelSettings_5pyrs")

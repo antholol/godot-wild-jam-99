@@ -63,8 +63,12 @@ _data = {
 &"spawn": SubResource("Animation_ls3km")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pt0c6"]
-radius = 318.0566
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt0c6"]
+bg_color = Color(0.88235295, 0.48235294, 0.627451, 0)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
 
 [node name="layer" type="Sprite2D" unique_id=2091338383]
 self_modulate = Color(1, 1, 1, 0)
@@ -76,5 +80,27 @@ script = ExtResource("2_ls3km")
 libraries/ = SubResource("AnimationLibrary_n6uvp")
 autoplay = &"spawn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350269141]
-shape = SubResource("CircleShape2D_pt0c6")
+[node name="hoverDetection" type="Button" parent="." unique_id=1362409967]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -319.0
+offset_top = -319.0
+offset_right = -319.0
+offset_bottom = -319.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_pt0c6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pt0c6")
+
+[connection signal="mouse_entered" from="hoverDetection" to="." method="_on_hover_detection_mouse_entered"]
+[connection signal="mouse_exited" from="hoverDetection" to="." method="_on_hover_detection_mouse_exited"]

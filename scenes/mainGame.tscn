@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xmi3lov54tgj" path="res://scripts/main_game.gd" id="1_mw4qg"]
 [ext_resource type="PackedScene" uid="uid://dmf7bhvrnkin" path="res://scenes/layer.tscn" id="2_iuu36"]
 [ext_resource type="Theme" uid="uid://ci8pynjmmu7yd" path="res://assets/theme.tres" id="2_mmojm"]
+[ext_resource type="PackedScene" uid="uid://bepjoxxfwig58" path="res://scenes/description_box.tscn" id="4_gb8pf"]
 
 [sub_resource type="Gradient" id="Gradient_iuu36"]
 offsets = PackedFloat32Array(0.2, 0.5, 0.8)
@@ -106,6 +107,8 @@ theme_override_font_sizes/font_size = 47
 text = "dingle dop"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="descriptionBox" parent="CanvasLayer" unique_id=203678416 instance=ExtResource("4_gb8pf")]
 
 [node name="Timer" type="Timer" parent="." unique_id=256781494]
 
